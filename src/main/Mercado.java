@@ -3,19 +3,16 @@ package main;
 import modelo.Produto;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
+import main.CadastrarProduto;
 
 public class Mercado {
     private static Scanner input = new Scanner(System.in);
-    private static ArrayList <Produto> produtos;
-    private static Map <Produto, Integer> carrinho;
+    public static ArrayList <Produto> produtos;
 
     public static void main(String[] args) {
         produtos = new ArrayList<>();
-        carrinho = new HashMap<>();
-        menu();
+            menu();
     }
     private static void menu(){
         int option;
@@ -36,7 +33,7 @@ public class Mercado {
             if (input.hasNextInt()){
                 option = input.nextInt();
                 input.nextLine();
-                if(option >=1 && option <=5){
+                if(option >=1 && option <=4){
                     break;
                 }
                 else {
@@ -50,14 +47,14 @@ public class Mercado {
 
             switch (option){
                 case 1:
-                    cadastrarProduto();
+                    new CadastrarProduto().cadastrar();
                     break;
-                case 2:
-                    listarProduto();
-                    break;
-                case 3:
-                    entradaEsaida();
-                    break;
+               //case 2:
+                    //listarProduto();
+                    //break;
+                //case 3:
+                   // entradaEsaida();
+                    //break//*
                 case 4:
                     System.out.println("Obrigado pela preferência!");
                     System.exit(0);
